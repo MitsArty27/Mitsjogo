@@ -13,13 +13,16 @@ public class ScriptTiro : MonoBehaviour {
 	public Vector2 veloTiro;
 	Rigidbody2D tiroRb;
 	ScriptGame scriptGame;
+
 	void Start () {
 		tiroRb = GetComponent<Rigidbody2D>();
 		Destroy(gameObject, tempoTiro);
 	}
+
 	void Update () {
 		tiroRb.velocity = veloTiro;
 	}
+
 	void OnTriggerEnter2D(Collider2D other)
 	{
 		if (other.gameObject.CompareTag("Fantasma"))
